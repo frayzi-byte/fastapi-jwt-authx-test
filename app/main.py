@@ -13,6 +13,8 @@ Base.metadata.create_all(bind=engine)
 
 app.include_router(users_router)
 
+print(app.routes)
+
 @app.get("/")
 def root():
     return {"status": "ok"}
