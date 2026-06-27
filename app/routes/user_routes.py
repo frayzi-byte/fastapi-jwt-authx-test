@@ -20,7 +20,7 @@ router = APIRouter(prefix="/users", tags=["Users"])
 def get_all_users(db : Session = Depends(get_db)):
     return get_users(db)
 
-@router.get("/login", response_model=UserResponse)
+@router.post("/login", response_model=UserResponse)
 def login_user(user : UserCreate, db : Session = Depends(get_db)):
     return login(db, user)
 
